@@ -1,0 +1,31 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div><a href="" class="navbar-brand">Purchanse Analysis App</a>
+        </div>
+
+        <div class="navbar-nav navbar-collapse justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" [routerLink]="['/adminRegestration']">Admin Regestration <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" [routerLink]="['/userDataUpload']" [queryParams]="{ params: 'userDataUpload'}">User Data Upload <span class="sr-only"></span> </a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" [routerLink]="['/purchaseDataUpload']" [queryParams]="{ params: 'purchaseDataUpload'}">Purchase Data Upload <span class="sr-only"></span> </a>
+                </li>
+                
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" [routerLink]="['/purchaseAnalysis']">Purchase Analysis <span class="sr-only"></span> </a>
+                  </li>
+    
+              </ul>
+        </div>
+        
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <li>
+                <a *ngIf="isLoggedIn" class="nav-link" href="/logout" (click)=handleLogout()>Logout</a>
+            </li>
+        </ul>
+    </nav>
+  </header>

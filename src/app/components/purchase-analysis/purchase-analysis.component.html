@@ -1,0 +1,65 @@
+<div class="container col-lg-6">
+    
+    <h1 class="text-center">Predict Product Purchase Analysis Report</h1>
+    <div class="card">
+      <div class="card-body">
+        <form class="form-group">
+            <div class="alert alert-success" *ngIf='showMessage'>{{message}}</div>
+            
+                <div class="row justify-content-center">
+                    <button (click)=ClickPredict() class="btn btn-success">Predict User Purchase Data</button>
+                 </div>
+            
+         
+
+                <div class="row justify-content-center" style="margin-top: 16px;">
+                    <button (click)=ClickGetPredictData() class="btn btn-success">Get Predicted Data</button>
+                </div>
+
+         
+          
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container col-lg-6" style="margin-top: 16px;">
+    
+    <div class="col-md-12 p-0" *ngIf = "showPurchaseAnalysis" style="margin-top: 16px;">
+        <div class="justify-content-center"><h5>Product Purchase Data Analysis Results</h5></div>
+        <p-table [value]="purchasePredictedDataList" tableStyleClass="red-bottom-border" 
+        [paginator]="true" [rows]="5" [totalRecords]="totalRecords" [rowsPerPageOptions]="[5,10]">
+            
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width: 3rem;"></th>
+                    <th style="width: 5rem;">User Name</th>
+                    <th style="width: 5rem;">State</th>
+                    <th style="width: 5rem;">User Email Id</th>
+                    <th style="width: 5rem;">Age</th>
+                    <th style="width: 5rem;">Country</th>
+                    <th style="width: 5rem;">User Loyality Level</th>
+                    <th style="width: 5rem;">User Predicted Purchase</th>
+
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-element>
+                <tr>
+                    <td style="width: 3rem;">
+
+                    </td>
+                    <td style="width: 5rem;">{{element.userName}}</td>
+                    <td style="width: 5rem;">{{element.userState}}</td>
+                    <td style="width: 5rem;">{{element.emailId}}</td>
+                    <td style="width: 5rem;">{{element.userAge}}</td>
+                    <td style="width: 5rem;">{{element.userCountry}}</td>
+                    <td style="width: 5rem;">{{element.userLoyaltyLevel}}</td>
+                    <td style="width: 5rem;">{{element.userPredictedPurchase}}</td>
+
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+  </div>
+

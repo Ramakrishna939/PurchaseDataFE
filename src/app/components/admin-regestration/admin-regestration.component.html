@@ -1,0 +1,30 @@
+<div class="container col-lg-6">
+    <h1 class="text-center">Admin Regestration Form</h1>
+    <div class="card">
+      <div class="card-body">
+        <form class="form-group" [formGroup]="adminRegForm">
+          <div class="alert alert-success" *ngIf='showMessage'>{{message}}</div>
+          <div class="form-group">
+            <label for="email">User Name :</label>
+            <input type="text" class="form-control" id="username" formControlName="adminUserName"  placeholder="Enter User Name"
+              name="username">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="text" class="form-control" formControlName="adminPassword"  id="password" placeholder="Enter password"
+              name="password">
+          </div>
+
+          <div class="row d-flex" style="margin-left: 0px;">
+            <div>
+              <button (click)=onClickSave() class="btn btn-success">Save</button>
+            </div>
+            <div style="margin-left: 16px;">
+              <button (click)=onClickReset() class="btn btn-success">Reset</button>
+            </div>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
